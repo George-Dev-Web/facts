@@ -71,3 +71,8 @@ async function saveFact() {
 // Add event listeners to buttons
 fetchFactBtn.addEventListener("click", getRandomFact);
 saveFactBtn.addEventListener("click", saveFact);
+const darkModeToggle = document.getElementById("dark-mode-toggle");
+
+darkModeToggle.addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
+});
