@@ -1,76 +1,112 @@
-/* General Styles */
 body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  background-color: #f4f4f4;
+  font-family: "Poppins", sans-serif;
+  background-color: #f5f5f5;
   color: #333;
-  margin: 0;
-  padding: 0;
-  transition: background 0.3s, color 0.3s;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-/* Container */
 .container {
   max-width: 600px;
   margin: 50px auto;
+  background: #fff;
   padding: 20px;
-  background: white;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
-/* Buttons */
+h1 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
 button {
-  background: #007bff;
+  background-color: #007bff;
   color: white;
   border: none;
-  padding: 10px 15px;
-  margin: 10px;
+  padding: 10px 20px;
+  border-radius: 8px;
   cursor: pointer;
-  border-radius: 5px;
-  transition: background 0.3s;
+  font-size: 16px;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
 button:hover {
-  background: #0056b3;
+  background-color: #0056b3;
+  transform: scale(1.05);
 }
 
-/* Dark Mode */
+.saved-fact {
+  background: #ddd;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.saved-fact.fade-out {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.delete-btn {
+  background: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.delete-btn:hover {
+  background: darkred;
+}
+
 .dark-mode {
   background-color: #333;
-  color: white;
+  color: #fff;
 }
 
 .dark-mode .container {
-  background: #444;
-  color: white;
+  background-color: #444;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .saved-fact {
+  background: #666;
 }
 
 .dark-mode button {
-  background: #ff9800;
+  background-color: #ff9800;
 }
 
 .dark-mode button:hover {
-  background: #e68900;
+  background-color: #e68900;
+}
+.loader {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 2px solid white;
+  border-radius: 50%;
+  border-top: 2px solid transparent;
+  animation: spin 0.6s linear infinite;
+  margin-left: 8px;
 }
 
-/* Fact Display */
-#fact-display {
-  font-size: 1.2em;
-  margin: 20px 0;
-  padding: 10px;
-  border-left: 5px solid #007bff;
+.hidden {
+  display: none;
 }
 
-/* Saved Facts List */
-#saved-facts {
-  list-style: none;
-  padding: 0;
-}
-
-#saved-facts li {
-  background: #ddd;
-  margin: 5px 0;
-  padding: 10px;
-  border-radius: 5px;
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
